@@ -1,0 +1,29 @@
+-- Question 3.1
+USE customerorders;
+
+CREATE TABLE Customer (
+    CustomerID INT PRIMARY KEY AUTO_INCREMENT,
+    CustomerFullName VARCHAR(50),
+    CustomerEmail VARCHAR(100)
+);
+
+-- Question 3.2
+CREATE TABLE Orders (
+    OrderID INT PRIMARY KEY AUTO_INCREMENT,
+    OrderNumber VARCHAR(20) NOT NULL,
+    CustomerID INT NOT NULL,
+    OrderDate DATE NOT NULL,
+    FOREIGN KEY (CustomerID) REFERENCES Customer(CustomerID)
+);
+
+-- Question 3.3
+INSERT INTO Customer (CustomerID, CustomerFullName, CustomerEmail)
+VALUES (1, 'Debbie Duncan', 'dduncan@yahoo.com');
+
+INSERT INTO Orders (OrderNumber, CustomerID, OrderDate)
+VALUES ('020149', 1, '2025-02-14');
+
+
+
+
+
